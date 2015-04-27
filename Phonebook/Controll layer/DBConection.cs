@@ -40,10 +40,10 @@ namespace Phonebook
                }
                      
            }
-           catch (SqlException e)
-           {
+           //catch (SqlException e)
+           //{
                
-           }
+           //}
            finally
            {
                Conn.Close();

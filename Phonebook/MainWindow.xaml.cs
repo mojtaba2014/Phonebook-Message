@@ -32,6 +32,7 @@ namespace Phonebook
 
         private void Edit_GetList_Click(object sender, RoutedEventArgs e)
         {
+            
             Proxy P = new Proxy();
             List<Contact> CL = P.listOfContacts;
 
@@ -44,7 +45,7 @@ namespace Phonebook
         private void Seach_Button_Click(object sender, RoutedEventArgs e)
         {
             PhoneBookController PBC = new PhoneBookController();
-            PBC.NewSearch(Search_name.Text, Search
+            PBC.NewSearch(Search_name.Text, Search_Company.Text);
         }
     }
 }
