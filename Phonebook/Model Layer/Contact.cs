@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Phonebook
 {
+    [Serializable]
     class Contact
     {
-        public string name { public get; private set; }
+        public string name { get; private set; }
         public int workPhone { get; private set; }
         public int privatePhone { get; private set; }
         public string companyName { get; private set; }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
+using System.Threading;
+
+
 namespace Phonebook
 {
     class Proxy
@@ -14,24 +16,29 @@ namespace Phonebook
 
         public Proxy()
         {
-            listOfContacts = DB.GetPhonebook(); // this is only from DB need to compare to File
+            listOfContacts = DB.GetPhonebook(); //this is only from DB need to compare to File
         }
+
         public void EditContactProxy(Contact C)
         {
             DB.EditContactDB(C);
             foreach (Contact old in listOfContacts)
             {
                 if (old.name.Equals(C.name))
-                {
-                    listOfContacts.Remove(old);
-                    listOfContacts.Add(C);
+                { 
+                  listOfContacts.Remove(old);
+                  listOfContacts.Add(C);
                 }
             }
+            Task t = new Task(SavetoText);
+            t.Start();
         }
+
         public void AddNewContact(Contact C)
         {
 
         }
+
         public List<Contact> SearchingList(string name, string companyName)
         {
 
@@ -44,6 +51,10 @@ namespace Phonebook
                 }
             }
             return SearchingList;            
+        }
+        private void SavetoText()
+        {
+            PBTF.SaveContacts(listOfContacts);           
         }
     }
 }
