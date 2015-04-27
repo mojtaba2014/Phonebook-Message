@@ -14,10 +14,10 @@ namespace Phonebook
 
         }
 
-       //public List<Contact> NewSearch(string name,string companyName)
-       //{
-       //    //remember return list of costumers!!!
-       //}
+       public List<Contact> NewSearch(string name, string companyName)
+       {
+           //remember return list of costumers!!!
+       }
        public void AddNewContact(string name,string companyName,int workPhone,int personalPhone)
        {
 
