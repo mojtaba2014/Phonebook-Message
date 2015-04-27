@@ -36,23 +36,20 @@ namespace Phonebook
                {
 
                    Contact C = new Contact(rdr["name"].ToString(), Int32.Parse(rdr["workPhone"].ToString()), Int32.Parse(rdr["privatePhone"].ToString()), rdr["CompanyName"].ToString());
-
                    Clist.Add(C);
-
                }
-              
-
-             
+                     
            }
            catch (SqlException e)
            {
-               Console.WriteLine("conection error " + e.Message);
+               
            }
            finally
            {
                Conn.Close();
                Conn.Dispose();
            }
+           return Clist;      
          }
        
     }
