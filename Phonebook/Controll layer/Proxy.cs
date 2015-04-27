@@ -24,9 +24,22 @@ namespace Phonebook
         {
 
         }
-        //public List<Contact> SearchingList(string name, string companyName)
-        //{
-        //    //remember return list of costumers
-        //}
+        public List<Contact> SearchingList(string name, string companyName)
+        {
+
+            List<Contact> SearchingList = new List<Contact>();
+            foreach (Contact c in listOfContacts)
+            {
+                if (c.Equals(name) || c.Equals(companyName))
+                {
+                    SearchingList.Add(c);
+                }
+
+
+
+            }
+            return SearchingList;
+            
+        }
     }
 }

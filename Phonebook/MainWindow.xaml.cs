@@ -41,5 +41,10 @@ namespace Phonebook
             }
             
         }
+        private void Seach_Button_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneBookController PBC = new PhoneBookController();
+            PBC.NewSearch(Search_name.Text, Search
+        }
     }
 }
