@@ -21,17 +21,18 @@ namespace Phonebook
 
         public void EditContactProxy(Contact C)
         {
-            DB.EditContactDB(C);
-            foreach (Contact old in listOfContacts)
-            {
-                if (old.name.Equals(C.name))
-                { 
-                  listOfContacts.Remove(old);
-                  listOfContacts.Add(C);
-                }
-            }
-            Task t = new Task(SavetoText);
-            t.Start();
+            //DB.EditContactDB(C);
+            //foreach (Contact old in listOfContacts)
+            //{
+            //    if (old.name.Equals(C.name))
+            //    { 
+            //      listOfContacts.Remove(old);
+            //      listOfContacts.Add(C);
+            //    }
+            //}
+            //Task t = new Task(SavetoText);
+            //t.Start();
+            SavetoText();
         }
 
         public void AddNewContact(Contact C)
