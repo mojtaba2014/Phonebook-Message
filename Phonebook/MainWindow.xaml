@@ -8,21 +8,21 @@
         <Rectangle Fill="#FFB1DBF3" HorizontalAlignment="Left" Height="660" Margin="415,36,0,0" Stroke="Black" VerticalAlignment="Top" Width="392"/>
         <Label Content="Phonebook" HorizontalAlignment="Left" Margin="146,41,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold" FontSize="18"/>
         <Label Content="Messages" HorizontalAlignment="Left" Margin="568,44,0,0" VerticalAlignment="Top" Width="114" FontWeight="Bold" FontSize="18"/>
-        <TextBox Name="Search_name" HorizontalAlignment="Left" Height="23" Margin="81,113,0,0" TextWrapping="Wrap" Text="name" VerticalAlignment="Top" Width="175"/>
-        <TextBox Name="Search_Company" HorizontalAlignment="Left" Height="23" Margin="81,141,0,0" TextWrapping="Wrap" Text="Company" VerticalAlignment="Top" Width="175"/>
+        <TextBox Name="Search_name" HorizontalAlignment="Left" Height="23" Margin="72,113,0,0" TextWrapping="Wrap" Text="name" VerticalAlignment="Top" Width="209"/>
+        <TextBox Name="Search_Company" HorizontalAlignment="Left" Height="23" Margin="72,141,0,0" TextWrapping="Wrap" Text="Company" VerticalAlignment="Top" Width="209"/>
         <Label Content="Search for contact" HorizontalAlignment="Left" Margin="117,80,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Name="Seach_Button" Content="Search" HorizontalAlignment="Left" Margin="275,141,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="Seach_Button" Content="Search" HorizontalAlignment="Left" Margin="297,140,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Add New Contact" HorizontalAlignment="Left" Margin="117,268,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox Name="Add_name" HorizontalAlignment="Left" Height="23" Margin="81,299,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="175"/>
-        <TextBox Name="Add_Company" HorizontalAlignment="Left" Height="23" Margin="81,329,0,0" TextWrapping="Wrap" Text="Company" VerticalAlignment="Top" Width="175"/>
-        <TextBox Name="Add_workphone" HorizontalAlignment="Left" Height="23" Margin="81,357,0,0" TextWrapping="Wrap" Text="workphone" VerticalAlignment="Top" Width="175"/>
-        <TextBox Name="Add_privatePhone" HorizontalAlignment="Left" Height="23" Margin="81,385,0,0" TextWrapping="Wrap" Text="privatePhone" VerticalAlignment="Top" Width="175"/>
-        <Button Name="Add_Button" Content="Add contact" HorizontalAlignment="Left" Margin="275,385,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox Name="Edit_listbox"  HorizontalAlignment="Left" Height="175" Margin="81,471,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="275,626,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox Name="Add_name" HorizontalAlignment="Left" Height="23" Margin="72,299,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="209"/>
+        <TextBox Name="Add_Company" HorizontalAlignment="Left" Height="23" Margin="72,329,0,0" TextWrapping="Wrap" Text="Company" VerticalAlignment="Top" Width="209"/>
+        <TextBox Name="Add_workphone" HorizontalAlignment="Left" Height="23" Margin="72,357,0,0" TextWrapping="Wrap" Text="workphone" VerticalAlignment="Top" Width="209"/>
+        <TextBox Name="Add_privatePhone" HorizontalAlignment="Left" Height="23" Margin="72,385,0,0" TextWrapping="Wrap" Text="privatePhone" VerticalAlignment="Top" Width="209"/>
+        <Button Name="Add_Button" Content="Add contact" HorizontalAlignment="Left" Margin="297,385,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.08,0.6"/>
+        <ListBox Name="Edit_listbox"  HorizontalAlignment="Left" Height="175" Margin="72,471,0,0" VerticalAlignment="Top" Width="209" />
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="297,626,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="CLick contact and press edit to change" HorizontalAlignment="Left" Margin="81,445,0,0" VerticalAlignment="Top" Width="250" FontWeight="Bold"/>
-        <Button Name="Edit_GetList" Content="Get all" HorizontalAlignment="Left" Margin="275,476,0,0" VerticalAlignment="Top" Width="75" Click="Edit_GetList_Click"/>
-        <ListBox HorizontalAlignment="Left" Height="69" Margin="81,169,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Name="Edit_GetList" Content="Get all" HorizontalAlignment="Left" Margin="297,476,0,0" VerticalAlignment="Top" Width="75" Click="Edit_GetList_Click" RenderTransformOrigin="0.853,0.55"/>
+        <ListBox HorizontalAlignment="Left" Height="69" Margin="72,169,0,0" VerticalAlignment="Top" Width="209"/>
 
     </Grid>
 </Window>

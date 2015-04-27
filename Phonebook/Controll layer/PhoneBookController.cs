@@ -12,7 +12,8 @@ namespace Phonebook
 
        public void EditContact(string name, int workPhone, int privatePhone, string company )
         {
-
+            Contact C = new Contact(name, workPhone, privatePhone , company);
+            P.EditContactProxy(C);
         }
 
        public List<Contact> NewSearch(string name, string companyName)

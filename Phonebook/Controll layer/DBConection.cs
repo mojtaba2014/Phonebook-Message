@@ -16,7 +16,23 @@ namespace Phonebook
                                                     "Password=Baz1nga87;");
        public void EditContactDB(Contact C)
        {
+           try
+           {
+               Conn.Open();
+               SqlCommand cmd = new SqlCommand("EditContact", Conn);
+               cmd.CommandType = CommandType.StoredProcedure;
 
+
+           }
+           catch (SqlException e)
+           {
+               
+           }
+           finally
+           {
+               Conn.Close();
+               Conn.Dispose();
+           }
        }
        public void AddNewContactDB(Contact C)
        {
@@ -38,12 +54,12 @@ namespace Phonebook
                    Contact C = new Contact(rdr["C_Name"].ToString(), int.Parse(rdr["C_WorkPhone"].ToString()), int.Parse(rdr["C_PrivatePhone"].ToString()), rdr["C_CompanyName"].ToString());
                    Clist.Add(C);
                }
-                     
+
            }
-           //catch (SqlException e)
-           //{
-               
-           //}
+           catch (SqlException e)
+           {
+
+           }
            finally
            {
                Conn.Close();
