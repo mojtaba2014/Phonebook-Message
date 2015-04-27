@@ -20,9 +20,11 @@ namespace Phonebook
     /// </summary>
     public partial class MainWindow : Window
     {
+        DBConection DB;
         public MainWindow()
         {
             InitializeComponent();
+            DB = new DBConection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -60,6 +62,16 @@ namespace Phonebook
                 
                 
             }
+        }
+
+        private void Add_Button_Click(object sender, RoutedEventArgs e)
+        {
+            DB.AddNewContactDB(Add_name.Text, Add_Company.Text, int.Parse(Add_workphone.Text), int.Parse(Add_privatePhone.Text));
+
+            Add_name.Text = "";
+            Add_Company.Text = "";
+            Add_workphone.Text = "";
+            Add_privatePhone.Text = "";
         }
     }
 }

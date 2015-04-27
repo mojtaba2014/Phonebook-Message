@@ -34,9 +34,31 @@ namespace Phonebook
                Conn.Dispose();
            }
        }
-       public void AddNewContactDB(Contact C)
+       public void AddNewContactDB(string Name, string CompanyName, int WorkPhone, int PrivatePhone)
        {
+           try
+           {
+               Conn.Open();
+               SqlCommand cmd = new SqlCommand("AddNewContact", Conn);
+               cmd.CommandType = CommandType.StoredProcedure;
 
+               cmd.Parameters.Add(new SqlParameter("@Name", Name));
+               cmd.Parameters.Add(new SqlParameter("@CompanyName", CompanyName));
+               cmd.Parameters.Add(new SqlParameter("@WorkPhone", WorkPhone));
+               cmd.Parameters.Add(new SqlParameter("@PrivatePhone", PrivatePhone));
+
+               cmd.ExecuteNonQuery();
+
+           }
+           catch (SqlException e)
+           {
+               Console.WriteLine("SQL conection error " + e.Message);
+           }
+           finally
+           {
+               Conn.Close();
+               Conn.Dispose();
+           }
        }
        public List<Contact> GetPhonebook()
        {
