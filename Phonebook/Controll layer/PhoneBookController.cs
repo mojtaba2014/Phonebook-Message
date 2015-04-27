@@ -18,5 +18,9 @@ namespace Phonebook
        {
            //remember return list of costumers!!!
        }
+       public void AddNewContact(string name,string companyName,int workPhone,int personalPhone)
+       {
+
+       }
     }
 }

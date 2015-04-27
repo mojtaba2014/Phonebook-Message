@@ -9,10 +9,16 @@ namespace Phonebook
     class Proxy
     {
         List<Contact> listOfContacts;
+        DBConection DB = new DBConection();
+        PhoneBookToFile PBTF = new PhoneBookToFile(); //wait with using this--Johann
 
+        public Proxy()
+        {
+            listOfContacts = DB.GetPhonebook();
+        }
         public void EditContactProxy(Contact C)
         {
-
+            
         }
         public void AddNewContact(Contact C)
         {

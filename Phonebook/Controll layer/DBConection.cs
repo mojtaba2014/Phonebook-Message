@@ -16,5 +16,9 @@ namespace Phonebook
        {
 
        }
+       public List<Contact> GetPhonebook()
+       {
+
+       }
     }
 }
