@@ -21,9 +21,10 @@ namespace Phonebook
           List<Contact> CL = P.SearchingList(name, companyName);
           return CL;
        }
-       public void AddNewContact(string name,string companyName,int workPhone,int personalPhone)
+       public void AddNewContact(string name,string companyName,int workPhone,int privatePhone)
        {
-           
+           Contact C = new Contact(name, workPhone, privatePhone , companyName);
+           P.AddNewContact(C);
        }
     }
 }
