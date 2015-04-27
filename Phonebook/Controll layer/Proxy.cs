@@ -8,7 +8,7 @@ namespace Phonebook
 {
     class Proxy
     {
-        List<Contact> listOfContacts;
+        public List<Contact> listOfContacts;
         DBConection DB = new DBConection();
         PhoneBookToFile PBTF = new PhoneBookToFile(); //wait with using this--Johann
 
@@ -24,9 +24,9 @@ namespace Phonebook
         {
 
         }
-        public List<Contact> SearchingList(string name, string companyName)
-        {
-            //remember return list of costumers
-        }
+        //public List<Contact> SearchingList(string name, string companyName)
+        //{
+        //    //remember return list of costumers
+        //}
     }
 }

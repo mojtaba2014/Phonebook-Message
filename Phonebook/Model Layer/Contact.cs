@@ -8,10 +8,10 @@ namespace Phonebook
 {
     class Contact
     {
-        string name { get; set; }
-        int workPhone { get; set; }
-        int privatePhone { get; set; }
-        string companyName { get; set; }
+        public string name { get; private set; }
+        public int workPhone { get; private set; }
+        public int privatePhone { get; private set; }
+        public string companyName { get; private set; }
 
         public Contact(string Name, int WorkPhone, int PrivatePhone, string Company)
         {
@@ -20,5 +20,6 @@ namespace Phonebook
             this.privatePhone = PrivatePhone;
             this.companyName = Company;
         }
+
     }
 }

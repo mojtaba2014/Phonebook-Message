@@ -18,9 +18,10 @@
         <TextBox Name="Add_workphone" HorizontalAlignment="Left" Height="23" Margin="81,301,0,0" TextWrapping="Wrap" Text="workphone" VerticalAlignment="Top" Width="175"/>
         <TextBox Name="Add_privatePhone" HorizontalAlignment="Left" Height="23" Margin="81,329,0,0" TextWrapping="Wrap" Text="privatePhone" VerticalAlignment="Top" Width="175"/>
         <Button Name="Add_Button" Content="Add contact" HorizontalAlignment="Left" Margin="275,329,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox  HorizontalAlignment="Left" Height="175" Margin="81,415,0,0" VerticalAlignment="Top" Width="175"/>
+        <ListBox Name="Edit_listbox"  HorizontalAlignment="Left" Height="175" Margin="81,415,0,0" VerticalAlignment="Top" Width="175"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="275,570,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="CLick contact and press edit to change" HorizontalAlignment="Left" Margin="81,389,0,0" VerticalAlignment="Top" Width="250" FontWeight="Bold"/>
+        <Button Name="Edit_GetList" Content="Get all" HorizontalAlignment="Left" Margin="275,420,0,0" VerticalAlignment="Top" Width="75" Click="Edit_GetList_Click"/>
 
     </Grid>
 </Window>

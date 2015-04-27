@@ -29,5 +29,16 @@ namespace Phonebook
         {
 
         }
+
+        private void Edit_GetList_Click(object sender, RoutedEventArgs e)
+        {
+            Proxy P = new Proxy();
+            List<Contact> CL = P.listOfContacts;
+            foreach(Contact C in CL)
+            {
+                Edit_listbox. += C.name ;
+            }
+            
+        }
     }
 }

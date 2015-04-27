@@ -35,7 +35,7 @@ namespace Phonebook
                while (rdr.HasRows && rdr.Read())
                {
 
-                   Contact C = new Contact(rdr["name"].ToString(), Int32.Parse(rdr["workPhone"].ToString()), Int32.Parse(rdr["privatePhone"].ToString()), rdr["CompanyName"].ToString());
+                   Contact C = new Contact(rdr["C_Name"].ToString(), int.Parse(rdr["C_WorkPhone"].ToString()), int.Parse(rdr["C_PrivatePhone"].ToString()), rdr["C_CompanyName"].ToString());
                    Clist.Add(C);
                }
                      
