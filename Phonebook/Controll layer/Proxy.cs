@@ -30,9 +30,9 @@ namespace Phonebook
             //        listOfContacts.Add(C);
             //    }
             //}
-            //Task t = new Task(SavetoText);
-            //t.Start();
-            SavetoText();
+            Task t = new Task(SavetoText);
+            t.Start();
+            
         }
 
         public void AddNewContact(Contact C)
