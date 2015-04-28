@@ -35,9 +35,25 @@ namespace Phonebook
             
         }
 
-        public void AddNewContact(Contact C)
+        public bool AddNewContact(Contact C)
         {
+            bool bo = true; 
             DB.AddNewContactDB(C);
+            
+            foreach (Contact x in listOfContacts)
+            {
+                if (x.name.Equals(C.name)) 
+                {
+                   bo = false;
+                }
+                else
+                {
+                    listOfContacts.Add(C);
+                    bo=true;
+                }
+            }
+            return bo;
+            
         }
 
         public List<Contact> SearchingList(string name, string companyName)
