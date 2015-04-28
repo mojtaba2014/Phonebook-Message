@@ -10,39 +10,40 @@ namespace Phonebook
 {
     class Proxy
     {
-        public List<Contact> listOfContacts;
+        internal List<Contact> listOfContacts;
+
         DBConection DB = new DBConection();
-        PhoneBookToFile PBTF = new PhoneBookToFile(); //wait with using this--Johann
+        PhoneBookToFile PBTF = new PhoneBookToFile(); 
 
         public Proxy()
         {
-            listOfContacts = DB.GetPhonebook(); //this is only from DB need to compare to File
+            LoadContactsFromText();
+           // listOfContacts = DB.GetPhonebook(); //this is only from DB need to compare to File
         }
 
         public void EditContactProxy(Contact C)
         {
             //DB.EditContactDB(C);
-            //foreach (Contact old in listOfContacts)
-            //{
-            //    if (old.name.Equals(C.name))
-            //    {
-            //        listOfContacts.Remove(old);
-            //        listOfContacts.Add(C);
-            //    }
-            //}
+            foreach (Contact old in listOfContacts)
+            {
+                if (old.name.Equals(C.name))
+                {
+                    listOfContacts.Remove(old);
+                    listOfContacts.Add(C);
+                    break;
+                }
+            }
             Task t = new Task(SavetoText);
-            t.Start();
-            
+            t.Start();            
         }
 
         public void AddNewContact(Contact C)
         {
-            DB.AddNewContactDB(C);
+            DB.AddNewContactDB(C);            
         }
 
         public List<Contact> SearchingList(string name, string companyName)
         {
-
             List<Contact> SearchingList = new List<Contact>();
             foreach (Contact c in listOfContacts)
             {
@@ -56,6 +57,15 @@ namespace Phonebook
         private void SavetoText()
         {
             PBTF.SaveContacts(listOfContacts);           
+        }
+        private void LoadContactsFromText()
+        {
+            listOfContacts = PBTF.GetContactFromFile();
+        }
+        public List<Contact> GetlistOfContacts()
+        {
+            var sortedlist = listOfContacts.OrderBy(x => x.name).ToList();
+            return sortedlist;
         }
     }
 }

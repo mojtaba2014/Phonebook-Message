@@ -36,7 +36,7 @@ namespace Phonebook
         {
             Edit_listbox.Items.Clear();
             Proxy P = new Proxy();
-            List<Contact> CL = P.listOfContacts;
+            List<Contact> CL = P.GetlistOfContacts();
 
             
             foreach(Contact C in CL)
@@ -56,7 +56,7 @@ namespace Phonebook
         {
             foreach (Object obj in Edit_listbox.SelectedItems)
             {
-               // MessageBox.Show(obj.ToString());
+               
                 Edit_Window E = new Edit_Window(obj.ToString());
                 E.Show();
                 
