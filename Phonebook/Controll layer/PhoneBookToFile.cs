@@ -13,11 +13,33 @@ namespace Phonebook
     {
        public void SaveContacts(List<Contact> Clist)
        {
-           XmlSerializer serializer = new XmlSerializer(typeof(List<Contact>));
-           TextWriter textWriter = new StreamWriter(@"C:\Data\data.xml");
-           serializer.Serialize(textWriter, Clist);
-           textWriter.Close();
-         
+           string dir = @"C:\Data";
+           string serializationFile = Path.Combine(dir, "Contact.bin");
+
+           //serialize
+           using (Stream stream = File.Open(serializationFile, FileMode.CreateNew))
+           {
+               var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+               bformatter.Serialize(stream, Clist);
+           }
+                  
+       }
+        public List<Contact> GetContactFromFile()
+       {
+            List<Contact> CList;
+
+            string dir = @"C:\Data";
+            string serializationFile = Path.Combine(dir, "Contact.bin");
+
+
+           using (Stream stream = File.Open(serializationFile, FileMode.Open))
+           {
+               var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+                CList = (List<Contact>)bformatter.Deserialize(stream);
+           }
+           return CList;
        }
 
     }
