@@ -17,7 +17,7 @@ namespace Phonebook
            string serializationFile = Path.Combine(dir, "Contact.bin");
 
            //serialize
-           using (Stream stream = File.Open(serializationFile, FileMode.CreateNew))
+           using (Stream stream = File.Open(serializationFile, FileMode.Create))
            {
                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
