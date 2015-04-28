@@ -24,7 +24,11 @@ namespace Phonebook
        public void AddNewContact(string name,string companyName,int workPhone,int privatePhone)
        {
            Contact C = new Contact(name, workPhone, privatePhone , companyName);
-           P.AddNewContact(C);
+          bool bol =  P.AddNewContact(C);
+           if (bol == false)
+           {
+               
+           }
        }
     }
 }

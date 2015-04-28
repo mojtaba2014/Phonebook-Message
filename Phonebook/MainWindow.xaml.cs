@@ -24,7 +24,7 @@ namespace Phonebook
         public MainWindow()
         {
             InitializeComponent();
-           
+            PBC = new PhoneBookController();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace Phonebook
         }
         private void Seach_Button_Click(object sender, RoutedEventArgs e)
         {
-            PBC = new PhoneBookController();
+            
             PBC.NewSearch(Search_name.Text, Search_Company.Text);
         }
 
@@ -66,7 +66,7 @@ namespace Phonebook
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
-            PBC = new PhoneBookController();
+            //PBC = new PhoneBookController();
             PBC.AddNewContact(Add_name.Text, Add_Company.Text, int.Parse(Add_workphone.Text), int.Parse(Add_privatePhone.Text));
 
             Add_name.Text = "";

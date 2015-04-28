@@ -10,40 +10,55 @@ namespace Phonebook
 {
     class Proxy
     {
-        internal List<Contact> listOfContacts;
-
+        public List<Contact> listOfContacts;
         DBConection DB = new DBConection();
-        PhoneBookToFile PBTF = new PhoneBookToFile(); 
+        PhoneBookToFile PBTF = new PhoneBookToFile(); //wait with using this--Johann
 
         public Proxy()
         {
-            LoadContactsFromText();
-           // listOfContacts = DB.GetPhonebook(); //this is only from DB need to compare to File
+            listOfContacts = DB.GetPhonebook(); //this is only from DB need to compare to File
         }
 
         public void EditContactProxy(Contact C)
         {
             //DB.EditContactDB(C);
-            foreach (Contact old in listOfContacts)
-            {
-                if (old.name.Equals(C.name))
-                {
-                    listOfContacts.Remove(old);
-                    listOfContacts.Add(C);
-                    break;
-                }
-            }
+            //foreach (Contact old in listOfContacts)
+            //{
+            //    if (old.name.Equals(C.name))
+            //    {
+            //        listOfContacts.Remove(old);
+            //        listOfContacts.Add(C);
+            //    }
+            //}
             Task t = new Task(SavetoText);
-            t.Start();            
+            t.Start();
+            
         }
 
-        public void AddNewContact(Contact C)
+        public bool AddNewContact(Contact C)
         {
-            DB.AddNewContactDB(C);            
+            bool bo = true; 
+            DB.AddNewContactDB(C);
+            
+            foreach (Contact x in listOfContacts)
+            {
+                if (x.name.Equals(C.name)) 
+                {
+                   bo = false;
+                }
+                else
+                {
+                    listOfContacts.Add(C);
+                    bo=true;
+                }
+            }
+            return bo;
+            
         }
 
         public List<Contact> SearchingList(string name, string companyName)
         {
+
             List<Contact> SearchingList = new List<Contact>();
             foreach (Contact c in listOfContacts)
             {
