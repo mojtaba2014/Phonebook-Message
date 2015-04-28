@@ -31,21 +31,22 @@ namespace Phonebook
            finally
            {
                Conn.Close();
-               Conn.Dispose();
+               
            }
        }
-       public void AddNewContactDB(string Name, string CompanyName, int WorkPhone, int PrivatePhone)
+       public void AddNewContactDB(Contact C)
        {
+
            try
            {
                Conn.Open();
                SqlCommand cmd = new SqlCommand("AddNewContact", Conn);
                cmd.CommandType = CommandType.StoredProcedure;
 
-               cmd.Parameters.Add(new SqlParameter("@Name", Name));
-               cmd.Parameters.Add(new SqlParameter("@CompanyName", CompanyName));
-               cmd.Parameters.Add(new SqlParameter("@WorkPhone", WorkPhone));
-               cmd.Parameters.Add(new SqlParameter("@PrivatePhone", PrivatePhone));
+               cmd.Parameters.Add(new SqlParameter("@Name", C.name));
+               cmd.Parameters.Add(new SqlParameter("@CompanyName", C.companyName));
+               cmd.Parameters.Add(new SqlParameter("@WorkPhone", C.workPhone));
+               cmd.Parameters.Add(new SqlParameter("@PrivatePhone",C.privatePhone));
 
                cmd.ExecuteNonQuery();
 
@@ -56,8 +57,7 @@ namespace Phonebook
            }
            finally
            {
-               Conn.Close();
-               Conn.Dispose();
+               Conn.Close();               
            }
        }
        public List<Contact> GetPhonebook()
@@ -84,8 +84,7 @@ namespace Phonebook
            }
            finally
            {
-               Conn.Close();
-               Conn.Dispose();
+               Conn.Close();               
            }
            return Clist;      
          }

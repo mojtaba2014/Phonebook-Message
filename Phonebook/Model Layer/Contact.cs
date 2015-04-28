@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+
 
 namespace Phonebook
 {
-    class Contact
+    [Serializable]
+    class Contact 
     {
         public string name { get; private set; }
         public int workPhone { get; private set; }

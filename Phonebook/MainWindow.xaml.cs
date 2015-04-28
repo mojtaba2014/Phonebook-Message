@@ -20,11 +20,11 @@ namespace Phonebook
     /// </summary>
     public partial class MainWindow : Window
     {
-        DBConection DB;
+        PhoneBookController PBC;
         public MainWindow()
         {
             InitializeComponent();
-            DB = new DBConection();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace Phonebook
         }
         private void Seach_Button_Click(object sender, RoutedEventArgs e)
         {
-            PhoneBookController PBC = new PhoneBookController();
+            PBC = new PhoneBookController();
             PBC.NewSearch(Search_name.Text, Search_Company.Text);
         }
 
@@ -66,7 +66,8 @@ namespace Phonebook
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
-            DB.AddNewContactDB(Add_name.Text, Add_Company.Text, int.Parse(Add_workphone.Text), int.Parse(Add_privatePhone.Text));
+            PBC = new PhoneBookController();
+            PBC.AddNewContact(Add_name.Text, Add_Company.Text, int.Parse(Add_workphone.Text), int.Parse(Add_privatePhone.Text));
 
             Add_name.Text = "";
             Add_Company.Text = "";
